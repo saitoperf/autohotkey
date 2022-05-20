@@ -2,6 +2,9 @@
 - `C:\Users\ユーザ名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`にショートカットを配置するとWindows起動時に実行されます
 
 ## キーバインドマップ
+![](./img/henkan.png)<br>
+![](./img/muhenkan.png)<br>
+
 
 |||
 |:-:|:-:|
