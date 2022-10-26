@@ -5,6 +5,7 @@
 vk1D & w::Click
 vk1D & r::Click, Right
 vk1D & z::Return	; shiftの変わり(低速移動用)
+vk1C & /::Return	; shiftの変わり(fnキー)
 
 vk1D & e::
 if GetKeyState("z", "P"){
@@ -24,23 +25,39 @@ Return
 
 vk1D & s::
 if GetKeyState("z", "P"){
-	Send, ^{PgUp}
+	Send, ^#{Left}
 }else{
-	MouseMove, -200, 0, 0, R ; x, y, speed, 相対座標
+	Send, ^{PgUp}
+	; MouseMove, -200, 0, 0, R ; x, y, speed, 相対座標
 }
 Return
 
 vk1D & f::
 if GetKeyState("z", "P"){
-	Send, ^{PgDn}
+	Send, ^#{Right}
 }else{
-	MouseMove, 200, 0, 0, R ; x, y, speed, 相対座標
+	Send, ^{PgDn}
+	; MouseMove, 200, 0, 0, R ; x, y, speed, 相対座標
 }
 Return
 
-vk1C & i::Send,{Blind}{Up}
+vk1C & i::
+if GetKeyState("/", "P"){
+	Click, WU, 1
+}else{
+	Send,{Blind}{Up}
+}
+Return
+
+vk1C & k::
+if GetKeyState("/", "P"){
+	Click, WD, 1
+}else{
+	Send,{Blind}{Down}
+}
+Return
+
 vk1C & j::Send,{Blind}{Left}
-vk1C & k::Send,{Blind}{Down}
 vk1C & l::Send,{Blind}{Right}
 vk1C & u::Send,{Blind}{Home}
 vk1C & o::Send,{Blind}{End}
@@ -59,9 +76,11 @@ vk1C & @::Send,{Blind}{End}+{Home}{Delete} ; 1行削除
 vk1D & vkBA::Send,{Blind}{Esc} ; vkBA:コロン
 vk1C & vkBA::Send,{Blind}{Esc} ; vkBA:コロン
 
+; vk1D & h::Send, {Tab}
+; vk1D & y::Send, {vkF0}
 
 #include IME.ahk
-;遠いキー
+;遠いキー(常に半角にする)
 vk1C & q::
 	ime_mode := IME_GET()
 	IME_SET(0)
@@ -163,77 +182,66 @@ vk1D & m::
 	Send,{Blind}{1}
 	IME_SET(ime_mode)
 Return
-
 vk1D & ,::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{2}
 	IME_SET(ime_mode)
 Return
-
 vk1D & .::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{3}
 	IME_SET(ime_mode)
 Return
-
 vk1D & j::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{4}
 	IME_SET(ime_mode)
 Return
-
 vk1D & k::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{5}
 	IME_SET(ime_mode)
 Return
-
 vk1D & l::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{6}
 	IME_SET(ime_mode)
 Return
-
 vk1D & u::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{7}
 	IME_SET(ime_mode)
 Return
-
 vk1D & i::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{8}
 	IME_SET(ime_mode)
 Return
-
 vk1D & o::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{9}
 	IME_SET(ime_mode)
 Return
-
 vk1D & a::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{.}
 	IME_SET(ime_mode)
 Return
-
 vk1D & vk20::
 	ime_mode := IME_GET()
 	IME_SET(0)
 	Send,{Blind}{0}
 	IME_SET(ime_mode)
 Return
-
 vk1D & vk1C::
 	ime_mode := IME_GET()
 	IME_SET(0)
@@ -257,7 +265,6 @@ if GetKeyState("CapsLock", "T") = 1{
    SetCapsLockState, on
 }
 Return
-
 RShift & LShift::
 if GetKeyState("CapsLock", "T") = 1{
    SetCapsLockState, off
