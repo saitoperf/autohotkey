@@ -2,16 +2,32 @@
 ;vk1D:無変換, vk1C:変換
 
 ; マウス
-vk1D & w::Click
-vk1D & r::Click, Right
 vk1D & z::Return	; shiftの変わり(低速移動用)
 vk1C & /::Return	; shiftの変わり(fnキー)
+
+vk1D & w::
+if GetKeyState("z", "P"){
+    Send, !{Left}   ; 戻る (alt Left)
+}else{
+    Click, Left
+}
+Return
+
+vk1D & r::
+if GetKeyState("z", "P"){
+    Send, !{Right}  ; 進む (alt Right)
+}else{
+    ; Click down, Right
+    Click, Right
+}
+Return
 
 vk1D & e::
 if GetKeyState("z", "P"){
 	Click, WU, 1
 }else{
-	MouseMove, 0, -200, 0, R ; x, y, speed, 相対座標
+    ; MouseMove, 0, -200, 0, R ; x, y, speed, 相対座標
+	Click, MIDDLE, 1
 }
 Return
 
@@ -19,31 +35,32 @@ vk1D & d::
 if GetKeyState("z", "P"){
 	Click, WD, 1
 }else{
-	MouseMove, 0, 200, 0, R ; x, y, speed, 相対座標
+	; MouseMove, 0, 200, 0, R ; x, y, speed, 相対座標
 }
 Return
 
 vk1D & s::
 if GetKeyState("z", "P"){
-	Send, ^#{Left}
+	Send, ^{PgUp}   ; tab <-
 }else{
-	Send, ^{PgUp}
+	Send, ^#{Left}  ; win <-
 	; MouseMove, -200, 0, 0, R ; x, y, speed, 相対座標
 }
 Return
 
 vk1D & f::
 if GetKeyState("z", "P"){
-	Send, ^#{Right}
+    Send, ^{PgDn}   ; tab ->
 }else{
-	Send, ^{PgDn}
+	Send, ^#{Right} ; win ->
 	; MouseMove, 200, 0, 0, R ; x, y, speed, 相対座標
 }
 Return
 
 vk1C & i::
 if GetKeyState("/", "P"){
-	Click, WU, 1
+	; Click, WU, 1
+    Send, #{Up}
 }else{
 	Send,{Blind}{Up}
 }
@@ -51,14 +68,29 @@ Return
 
 vk1C & k::
 if GetKeyState("/", "P"){
-	Click, WD, 1
+	; Click, WD, 1
+    Send, #{Down}
 }else{
 	Send,{Blind}{Down}
 }
 Return
 
-vk1C & j::Send,{Blind}{Left}
-vk1C & l::Send,{Blind}{Right}
+vk1C & j::
+if GetKeyState("/", "P"){
+    Send, #{Left}
+}else{
+    Send,{Blind}{Left}
+}
+Return
+
+vk1C & l::
+if GetKeyState("/", "P"){
+    Send, #{Right}
+}else{
+    Send,{Blind}{Right}
+}
+Return
+
 vk1C & u::Send,{Blind}{Home}
 vk1C & o::Send,{Blind}{End}
 vk1C & m::Send,{Blind}{PgUp} 
