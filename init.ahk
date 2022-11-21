@@ -41,18 +41,18 @@ Return
 
 vk1D & s::
 if GetKeyState("z", "P"){
-	Send, ^{PgUp}   ; tab <-
-}else{
 	Send, ^#{Left}  ; win <-
+}else{
+	Send, ^{PgUp}   ; tab <-
 	; MouseMove, -200, 0, 0, R ; x, y, speed, 相対座標
 }
 Return
 
 vk1D & f::
 if GetKeyState("z", "P"){
-    Send, ^{PgDn}   ; tab ->
-}else{
 	Send, ^#{Right} ; win ->
+}else{
+    Send, ^{PgDn}   ; tab ->
 	; MouseMove, 200, 0, 0, R ; x, y, speed, 相対座標
 }
 Return
