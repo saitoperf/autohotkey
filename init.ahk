@@ -24,7 +24,8 @@ Return
 
 vk1D & e::
 if GetKeyState("z", "P"){
-	Click, WU, 1
+	; Click, WU, 1
+    Send, !{Up}  ; エクスプローラ戻る (alt Up)
 }else{
     ; MouseMove, 0, -200, 0, R ; x, y, speed, 相対座標
 	Click, MIDDLE, 1
