@@ -308,6 +308,14 @@ Return
 
 ;その他ショートカット
 vk1C & ,::Send,{F9}{F8}{Enter} ; 日本語英語
-vk1C & vk20::Send,{-}{>}
+vk1C & vk20::Send, {-}{>}
+; vk1C & vk20::Send, describe
 LShift & vk1D::Return ; 先にshiftを押すと意図しない挙動になるので
 LShift & vk1C::Return ; 先にshiftを押すと意図しない挙動になるので
+
+; スリープ
+; NumpadSub::DllCall("PowrProf.dll\SetSuspendState", "int", 0, "int", 0, "int", 0)
+; 画面オフ
+NumpadSub::
+SendMessage, 0x112, 0xF170, 2,, Program Manager
+return
