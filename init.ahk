@@ -312,3 +312,7 @@ vk1C & ,::Send,{F9}{F8}{Enter} ; 日本語英語
 vk1C & vk20::Send journalctl --full --no-pager -xef -u{Space}
 LShift & vk1D::Return ; 先にshiftを押すと意図しない挙動になるので
 LShift & vk1C::Return ; 先にshiftを押すと意図しない挙動になるので
+
+NumpadSub::
+SendMessage, 0x112, 0xF170, 2,, Program Manager
+return
