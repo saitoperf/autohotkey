@@ -32,6 +32,11 @@ Hotkey, % R_lower . " & WheelUp"   , Action_RL_WheelUp
 Hotkey, % R_lower . " & WheelDown" , Action_RL_WheelDown
 return
 
+; 通常マウスの動作
+~RButton & LButton::
+    WinClose, A
+return
+
 ; Action_LU:
 ;     Click, Left ; 左クリック
 ; return
@@ -58,7 +63,8 @@ return
 
 ; キーバインド: 右上 (┐)
 Action_RU_LU:
-    WinClose, A ; ウィンドウ全体を閉じる（Alt + F4）
+    Click, Left
+    WinClose, A ; クリックしてウィンドウ全体を閉じる（Alt + F4）
 return
 Action_RU_LL:
     Send, ^w ; タブを閉じる

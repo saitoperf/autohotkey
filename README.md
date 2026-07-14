@@ -89,3 +89,12 @@
 ## ToDo
 - `無変換+w`で、左クリックしっぱなしにする
 - `変換+/+j`で、winキーを離さないままにする
+
+
+## Slimblade
+
+![](./img/slimblade.png)
+![](./img/slimblade_Left_upper.png)
+![](./img/slimblade_Right_upper.png)
+![](./img/slimblade_Left_lower.png)
+![](./img/slimblade_Right_lower.png)
