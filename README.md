@@ -93,7 +93,7 @@
 
 ## Slimblade
 
-![](./img/slimblade.png)
+![](./img/slimblade.dio.png)
 ![](./img/slimblade_Left_upper.dio.png)
 ![](./img/slimblade_Right_upper.dio.png)
 ![](./img/slimblade_Left_lower.dio.png)
