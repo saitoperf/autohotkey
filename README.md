@@ -94,7 +94,7 @@
 ## Slimblade
 
 ![](./img/slimblade.png)
-![](./img/slimblade_Left_upper.png)
-![](./img/slimblade_Right_upper.png)
-![](./img/slimblade_Left_lower.png)
-![](./img/slimblade_Right_lower.png)
+![](./img/slimblade_Left_upper.dio.png)
+![](./img/slimblade_Right_upper.dio.png)
+![](./img/slimblade_Left_lower.dio.png)
+![](./img/slimblade_Right_lower.dio.png)
