@@ -75,10 +75,10 @@ return
 
 ; キーバインド: 左下（└）
 Action_LL_LU:
-    Send, ^{PgUp} ; タブ移動 ←
+    Send, ^#{Left} ; 仮想window移動 ←
 return
 Action_LL_RU:
-    Send, ^{PgDn} ; タブ移動 →
+    Send, ^#{Right} ; 仮想window移動 →
 return
 Action_LL_RL:
     Send, !{Right} ; 進む
@@ -86,10 +86,10 @@ return
 
 ; キーバインド: 右下（┘）
 Action_RL_LU:
-    Send, ^#{Left} ; 仮想window移動 ←
+    Send, ^{PgUp} ; タブ移動 ←
 return
 Action_RL_RU:
-    Send, ^#{Right} ; 仮想window移動 →
+    Send, ^{PgDn} ; タブ移動 →
 return
 Action_RL_LL:
     Send, !{Left} ; 戻る
